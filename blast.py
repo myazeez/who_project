@@ -21,13 +21,13 @@ def blast():
         microbigge_inp_file = f"{settings.OUTPUT_DATA_DIRECTORY_PATH}{settings.MICROBIGGE_FILENAME}"
         microbigge_out_file = f"{settings.OUTPUT_DATA_DIRECTORY_PATH}{settings.MICROBIGGE_OUTPUT_FILENAME}"
         get_records(microbigge_inp_file, microbigge_out_file)
-        download_protein_sequences_from_ncbi(microbigge_out_file, isolate_protein_fasta_file, ref_protein_fasta_file,  protein_name, reference_acc, settings.EMAIL)
+        # download_protein_sequences_from_ncbi(microbigge_out_file, isolate_protein_fasta_file, ref_protein_fasta_file,  protein_name, reference_acc, settings.EMAIL)
     else:
         print("All neccessary files are already available ...")
 
-    blast_output_file = f"{settings.OUTPUT_DATA_DIRECTORY_PATH}{protein_name}_{reference_acc}_blastp_output"
+    # blast_output_file = f"{settings.OUTPUT_DATA_DIRECTORY_PATH}{protein_name}_{reference_acc}_blastp_output"
     
-    print("Running blastp ...")
-    subprocess.run("sh blastp.sh", shell=True, env={"QUERY_FILE": isolate_protein_fasta_file, "SUBJECT_FILE": ref_protein_fasta_file, "OUT_FILE": blast_output_file})
-    print("blastp has finished running ...")
+    # print("Running blastp ...")
+    # subprocess.run("sh blastp.sh", shell=True, env={"QUERY_FILE": isolate_protein_fasta_file, "SUBJECT_FILE": ref_protein_fasta_file, "OUT_FILE": blast_output_file})
+    # print("blastp has finished running ...")
 blast()
