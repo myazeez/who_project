@@ -3,7 +3,7 @@ from utils import get_records, download_protein_sequences_from_ncbi
 import subprocess 
 
 def blast():
-    # Workflow 
+    # Workflow
     print("Checking if blast+ is installed ...")
     result = subprocess.run("sh blast_download.sh", shell=True, capture_output=True, text=True)
     result = result.stdout
